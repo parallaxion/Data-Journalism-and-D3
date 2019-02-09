@@ -61,10 +61,12 @@ d3.csv("data.csv").then(function(hairData) {
 
     // Step 5: Create Circles
    
-    var textGroup = chartGroup.selectAll("text")
+    var textGroup = chartGroup.selectAll(".states")
     .data(hairData)
     .enter()
     .append("text")
+    //`selectAll(".someClass")` and `.classed('someClass', true)`
+    .classed('states',true)
     .attr("x", d => xLinearScale(d.income))
     .attr("y", d => yLinearScale(d.smokes))
     .attr("text-anchor", "middle")
